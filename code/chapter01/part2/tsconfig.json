@@ -1,0 +1,55 @@
+{
+    /*
+        tsconfig.json 是ts编译器的配置文件，ts编译器可以根据它的信息来对代码进行编译
+        "include" 用来指定哪些ts文件需要被编译
+            路径: ‘**’表示任意目录，‘*’表示任意文件
+        "exclude" 不需要被编译的文件目录
+            默认值：["node_modules", "bower_components", "jspm_packages"]
+    */
+    "include": [
+        "./src/**/*",
+    ],
+    "exclude": [
+        "./src/hello/**/*",
+    ],
+    /*
+        "compilerOptions": 编译器的选项
+    */
+    "compilerOptions": {
+        // target 用来指定ts被编译成的ES的版本
+        // target能够接受的值可以通过故意写错来获取
+        "target": "ES3", // ESNext 表示最新版本
+        // module 指定要使用的模块化的规范
+        "module": "system",
+        // lib 用来指定项目中要使用的库
+        "lib": ["DOM", "es5", "es2015.promise"], // 不要随便改lib
+        // outDir 用来指定编译后文件所在的目录
+        "outDir": "./dist",
+        // 将代码合并为一个文件
+        // 设置outFile后，所有的全局作用域中的代码合并到同一个文件中
+        "outFile": "./dist/app.js",
+        // 是否对js文件进行编译，默认是false
+        "allowJs": false,
+        // 检查JS代码是否符合语法规范，默认是false
+        "checkJs": false,
+        // 是否移除注释
+        "removeComments": false,
+        // 不生成编译后的文件。设置为true时，只执行编译步骤不产生编译后的文件
+        "noEmit": false,
+        // 当有错误时不生成编译文件，默认是false
+        "noEmitOnError": false,
+
+        // 是否开启 所有严格检查的总开关
+        "strict": false,
+
+        // 用来设置编译后的文件是否使用严格模式，默认false
+        // 当存在模块化代码时，JS文件就自动进入严格模式
+        "alwaysStrict": false,
+        // 是否开启 不允许隐式的any类型
+        "noImplicitAny": false,
+        // 是否开启 不允许明确类型的this
+        "noImplicitThis": false,
+        // 是否开启 严格的检查空格
+        "strictNullChecks": false
+    }
+}
