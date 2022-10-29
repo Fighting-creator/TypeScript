@@ -17,7 +17,7 @@ b = 'hello';
 // b = 123;
 
 // 声明完变量直接进行赋值
-// let c: boolean = false;
+// let c1: boolean = false;
 
 // 如果变量的声明和赋值是同时进行的，TS可以自动对变量进行类型检测
 let c = false;
